@@ -2,9 +2,9 @@
 Configuration file.
 """
 
-VOCAB_SIZE = 20000
+VOCAB_SIZE = 100000
 USE_CUDA = True
-DEVICES = [2]
+DEVICES = [0,1,2,3,4,5,6,7,8]
 CUDA_DEVICE = DEVICES[0]
 VERSION = 1
 MAXLEN = 30
