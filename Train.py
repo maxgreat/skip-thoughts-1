@@ -22,7 +22,7 @@ d = DataLoader("/data/wiki+leboncoin_pre.txt")
 
 mod = UniSkip()
 if USE_CUDA:
-    mod.cuda(CUDA_DEVICE)
+    mod.cuda()
 
 
 # In[ ]:
@@ -78,7 +78,7 @@ print("Starting training...")
 
 # a million iterations
 for i in range(0, 1000000):
-    sentences, lengths = d.fetch_batch(32 * 8)
+    sentences, lengths = d.fetch_batch(96)
 
     loss, prev, nex, prev_pred, next_pred  = mod(sentences, lengths)
     

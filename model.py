@@ -34,7 +34,7 @@ class Encoder(nn.Module):
 
         sentences = sentences.transpose(0, 1)  # (maxlen, batch_size)
 
-        word_embeddings = F.tanh(self.word2embd(sentences))  # (maxlen, batch_size, word_size)
+        word_embeddings = torch.tanh(self.word2embd(sentences))  # (maxlen, batch_size, word_size)
 
         # The following is a hack: We read embeddings in reverse. This is required to move padding to the left.
         # If reversing is not done then the RNN sees a lot a garbage values right before its final state.
